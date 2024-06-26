@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace RPG_Test
@@ -23,6 +25,8 @@ namespace RPG_Test
                 Console.WriteLine($"SELECT YOUR CLASS: Warrior // Rogue // Wizard\n");
                 string heroSelect = Console.ReadLine().ToLower();
                 string choice;
+                string nameRegex = @"^[a-zA-Z\s]+$";
+                string name;
 
                 switch (heroSelect)
                 {                   
@@ -34,7 +38,25 @@ namespace RPG_Test
                         choice = Console.ReadLine().ToLower();
                         if (choice == "y")
                         {
-                            Warrior warrior = new Warrior();
+                            Warrior warrior = new Warrior();                            
+                            
+                            do
+                            {
+                                Console.Clear();
+                                Console.WriteLine("Enter your name:");
+                                name = Console.ReadLine();
+
+                                if (!Regex.IsMatch(name, nameRegex))
+                                {
+                                    Console.WriteLine("Invalid name. Please enter letters and spaces only.");
+                                }
+                            } 
+                            while (!Regex.IsMatch(name, nameRegex));
+                            warrior._name = name;
+                            Console.Clear();
+                            Console.WriteLine($"Warrior {name}, a name to be feared that's for sure...\n");
+                            Console.WriteLine("Press any key to continue with your journey...");
+                            Console.ReadKey();
                             break;
                         }
                         Console.Clear();
@@ -51,6 +73,23 @@ namespace RPG_Test
                         if (choice == "y")
                         {
                             Rogue rogue = new Rogue();
+                            do
+                            {
+                                Console.Clear();
+                                Console.WriteLine("Enter your name:");
+                                name = Console.ReadLine();
+
+                                if (!Regex.IsMatch(name, nameRegex))
+                                {
+                                    Console.WriteLine("Invalid name. Please enter letters and spaces only.");
+                                }
+                            }
+                            while (!Regex.IsMatch(name, nameRegex));
+                            rogue._name = name;
+                            Console.Clear();
+                            Console.WriteLine($"Sneaky {name}, a name to be feared that's for sure...\n");
+                            Console.WriteLine("Press any key to continue with your journey...");
+                            Console.ReadKey();
                             break;
                         }
                         Console.Clear();
@@ -66,6 +105,23 @@ namespace RPG_Test
                         if (choice == "y")
                         {
                             Wizard wizard = new Wizard();
+                            do
+                            {
+                                Console.Clear();
+                                Console.WriteLine("Enter your name:");
+                                name = Console.ReadLine();
+
+                                if (!Regex.IsMatch(name, nameRegex))
+                                {
+                                    Console.WriteLine("Invalid name. Please enter letters and spaces only.");
+                                }
+                            }
+                            while (!Regex.IsMatch(name, nameRegex));                            
+                            wizard._name = name;
+                            Console.Clear();
+                            Console.WriteLine($"Great {name}, a name to be feared that's for sure...\n");
+                            Console.WriteLine("Press any key to continue with your journey...");
+                            Console.ReadKey();
                             break;
                         }
                         Console.Clear();
