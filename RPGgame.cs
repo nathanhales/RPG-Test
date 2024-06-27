@@ -24,12 +24,12 @@
                     case "warrior":
                         Console.Clear();
                         Console.WriteLine("  ▄ ▄   ██   █▄▄▄▄ █▄▄▄▄ ▄█ ████▄ █▄▄▄▄\r\n █   █  █ █  █  ▄▀ █  ▄▀ ██ █   █ █  ▄▀\r\n█ ▄   █ █▄▄█ █▀▀▌  █▀▀▌  ██ █   █ █▀▀▌ \r\n█  █  █ █  █ █  █  █  █  ▐█ ▀████ █  █ \r\n █ █ █     █   █     █    ▐         █  \r\n  ▀ ▀     █   ▀     ▀              ▀   \r\n         ▀                             \n");
-                        Console.WriteLine("A stalwart defender, clad in heavy armor that gleams with faint scratches and nicks - testaments to countless battles. Their weathered face is etched with determination, and a calloused hand rests on the hilt of a trusty blade.");
+                        Console.WriteLine("A stalwart defender, clad in heavy armor that gleams with faint scratches and nicks - testaments to countless battles.\nTheir weathered face is etched with determination, and a calloused hand rests on the hilt of a trusty blade.");
                         Console.WriteLine("\nDo you wish to continue as a Warrior? Y/N");
                         choice = Console.ReadLine().ToLower();
                         if (choice == "y")
                         {
-                            Warrior warrior = new Warrior();
+                            Warrior warrior = new Warrior( 250, 50, 13, 4, 8, 25 );
 
                             Console.Clear();
                             Console.WriteLine("Enter your name:");
@@ -55,7 +55,7 @@
                         choice = Console.ReadLine().ToLower();
                         if (choice == "y")
                         {
-                            Rogue rogue = new Rogue();
+                            Rogue rogue = new Rogue( 150, 50, 7, 13, 5, 15 );
 
                             Console.Clear();
                             Console.WriteLine("Enter your name:");
@@ -80,7 +80,7 @@
                         choice = Console.ReadLine().ToLower();
                         if (choice == "y")
                         {
-                            Wizard wizard = new Wizard();
+                            Wizard wizard = new Wizard( 100, 250, 3, 4, 15, 8 );
 
                             Console.Clear();
                             Console.WriteLine("Enter your name:");
